@@ -10,6 +10,8 @@
 
 **Key finding, kills-per-game over time:** I looked at whether average kills-per-game (KPG) changed over the tournament's history, curious whether veteran player experience would show up as rising kill output, or whether the field would rise together and cancel it out. Match statistics are unavailable for 2011, 2012, 2019, 2020, 2021 and 2022 in the source dataset (the years exist in the tournament records but have no corresponding match-level data. I verified this with a NOT IN subquery confirming those years return zero rows in `match_statistics`, rather than being silently counted as zero or null). For the years where data exists, KPG declined steadily every year from 2013 to 2017, 30, 29, 27, 25, then 19, before jumping to 23 in 2018. It then climbed steadily again from 2023 onward: 24, 27, then 30 in 2025, landing at exactly the same average as 2013. With two separate multi-year gaps in the middle of the timeline, I can't call this one continuous trend across the full history, but the 2013-to-2025 bookend and the clean climb on both sides of the 2019-2022 gap are real patterns worth noting.
 
+ ![Average kills per game by year, 2013–2025](assets/kpg_trend.png)
+
 ## Tools
 
 - PostgreSQL 18
